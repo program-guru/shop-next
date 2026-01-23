@@ -4,6 +4,13 @@ import ThemeToggle from "./ThemeToggle";
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const menuItems = [
+        { name: "Home", href: "#" },
+        { name: "Products", href: "#" },
+        { name: "About Us", href: "#" },
+        { name: "Contact Us", href: "#" },
+    ];
+
     function toggleMenu() {
         setIsMenuOpen(!isMenuOpen);
     }
@@ -13,7 +20,7 @@ export default function Navbar() {
             <a href="https://prebuiltui.com">
                 <img
                     src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/prebuiltuiDummyLogo.svg"
-                    alt="PrebuiltUI Logo"
+                    alt="ShopNext Logo"
                 />
             </a>
             <nav
@@ -22,18 +29,15 @@ export default function Navbar() {
                     isMenuOpen ? 'max-md:w-full' : 'max-md:w-0'
                 }`}
             >
-                <a className="hover:text-primary" href="#">
-                    Products
-                </a>
-                <a className="hover:text-primary" href="#">
-                    Customer Stories
-                </a>
-                <a className="hover:text-primary" href="#">
-                    Pricing
-                </a>
-                <a className="hover:text-primary" href="#">
-                    Docs
-                </a>
+                {menuItems.map((item) => (
+                    <a
+                        key={item.name}
+                        href={item.href}
+                        className="hover:text-primary"
+                    >
+                        {item.name}
+                    </a>
+                ))}
                 <button id="closeMenu" className="md:hidden text-text-muted" onClick={toggleMenu}>
                     <svg
                         className="w-6 h-6"
