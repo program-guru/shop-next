@@ -3,7 +3,7 @@ import ThemeToggle from "./ThemeToggle";
 import logoLight from "../assets/logo-light.png";
 
 export default function Navbar() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
     const menuItems = [
         { name: "Home", href: "#" },
