@@ -9,7 +9,7 @@ export default function Navbar() {
     }
 
     return (
-        <header className="flex items-center justify-between px-6 py-3 md:py-4 shadow max-w-5xl rounded-full mx-auto w-full bg-surface text-text">
+        <header className="flex items-center justify-between px-6 mt-3 py-3 md:py-4 shadow max-w-5xl rounded-full mx-auto w-full bg-surface text-text">
             <a href="https://prebuiltui.com">
                 <img
                     src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/prebuiltuiDummyLogo.svg"
