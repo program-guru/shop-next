@@ -1,11 +1,10 @@
 import "./App.css";
-import ThemeToggle from "./components/ThemeToggle";
+import Navbar from "./components/NavBar";
 
 function App() {
-	return <div>
-		<p>Hello World</p>
-		<ThemeToggle />
-		</div>;
+	return <>
+		<Navbar />
+		</>;
 }
 
 export default App;

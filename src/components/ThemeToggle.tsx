@@ -47,7 +47,13 @@ const ThemeToggle = () => {
 			}}
 		>
 			{theme === "dark" ? (
-				<Sun className="w-5 h-5 text-yellow-500 transition-transform rotate-0 hover:rotate-90 focus:outline-none focus:ring-0 border-0" />
+				<Sun
+					className="w-5 h-5 text-yellow-500 transition-transform rotate-0 hover:rotate-90 focus:outline-none focus:ring-0 border-0"
+					style={{
+						backgroundColor: "var(--color-surface)",
+						color: "var(--color-text)",
+					}}
+				/>
 			) : (
 				<Moon
 					className="w-5 h-5 transition-transform hover:-rotate-12"
