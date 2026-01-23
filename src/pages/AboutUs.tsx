@@ -13,14 +13,6 @@ export default function AboutUs() {
                     <p className="mt-8">ShopNext is a comprehensive e-commerce platform designed to streamline online retail operations. </p>
                     <p className="mt-4">Whether you're looking for clothes, shoes, or accessories, ShopNext provides a seamless shopping experience.</p>
                     <p className="mt-4">From retail to e-commerce, ShopNext offers everything you need to build a successful online store.</p>
-                    <a href="#" className="flex items-center w-max gap-2 mt-8 hover:-translate-y-0.5 transition g-linear-to-r from-primary to-primary-dark py-3 px-8 rounded-full text-text-inverse">
-                        <span>Read more</span>
-                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12.53 6.53a.75.75 0 0 0 0-1.06L7.757.697a.75.75 0 1 0-1.06 1.06L10.939 6l-4.242 4.243a.75.75 0 0 0 1.06 1.06zM0 6v.75h12v-1.5H0z"
-                                fill="currentColor" /> 
-                        </svg>
-                    </a>
                 </div>
             </section>
         </>
