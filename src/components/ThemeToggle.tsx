@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 
-const ThemeToggle = () => {
+export default function ThemeToggle() {
 	// Check Local Storage or System Preference on first load
 	const [theme, setTheme] = useState(() => {
 		if (typeof window !== "undefined") {
@@ -67,4 +67,3 @@ const ThemeToggle = () => {
 	);
 };
 
-export default ThemeToggle;
