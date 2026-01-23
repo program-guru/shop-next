@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import logoLight from "../assets/logo-light.png";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +20,8 @@ export default function Navbar() {
         <header className="flex items-center justify-between px-6 mt-3 py-3 md:py-4 shadow max-w-5xl rounded-full mx-auto w-full bg-surface text-text">
             <a href="https://prebuiltui.com">
                 <img
-                    src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/prebuiltuiDummyLogo.svg"
+                    src={logoLight}
+                    className="h-8 md:h-10"
                     alt="ShopNext Logo"
                 />
             </a>
