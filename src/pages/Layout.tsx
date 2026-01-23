@@ -1,0 +1,20 @@
+import Footer from "../components/Footer";
+import Navbar from "../components/NavBar";
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="app-container min-h-screen flex flex-col">
+      <header className="sticky top-0 z-50">
+        <Navbar />
+      </header>
+
+      <main className="grow m-5">
+        {children}
+      </main>
+
+      <footer>
+        <Footer />
+      </footer>
+    </div>
+  );
+}
