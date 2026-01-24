@@ -52,8 +52,9 @@ export default function Navbar() {
 						<path d="M6 18L18 6M6 6l12 12" />
 					</svg>
 				</button>
-				{links.map((item) => (
+				{links.map((item, index) => (
 					<NavLink
+                        key={index}
 						to={item.href}
 						className={({ isActive }) =>
 							isActive

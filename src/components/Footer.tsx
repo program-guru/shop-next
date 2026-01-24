@@ -63,8 +63,9 @@ export default function Footer() {
 						<h2 className="font-semibold mb-5 text-text">
 							Company
 						</h2>
-						{links.map((item) => (
+						{links.map((item, index) => (
 							<Link
+								key={index}
 								to={item.href}
 								className="hover:text-primary transition"
 							>
