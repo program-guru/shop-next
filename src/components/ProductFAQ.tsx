@@ -12,28 +12,23 @@ export default function ProductFAQ() {
 	const faqs: FAQ[] = [
 		{
 			question: "Are these shoes true to size?",
-			answer:
-				"Yes. Our shoes follow standard sizing. If you are between sizes, we recommend choosing the larger size for optimal comfort.",
+			answer: "Yes. Our shoes follow standard sizing. If you are between sizes, we recommend choosing the larger size for optimal comfort.",
 		},
 		{
 			question: "What materials are used?",
-			answer:
-				"We use premium breathable mesh, durable rubber soles, and cushioned midsoles designed for all-day comfort and longevity.",
+			answer: "We use premium breathable mesh, durable rubber soles, and cushioned midsoles designed for all-day comfort and longevity.",
 		},
 		{
 			question: "How long does delivery take?",
-			answer:
-				"Orders are typically delivered within 3-5 business days. Express shipping options are available at checkout.",
+			answer: "Orders are typically delivered within 3-5 business days. Express shipping options are available at checkout.",
 		},
 		{
 			question: "What is the return policy?",
-			answer:
-				"You can return or exchange unworn shoes within 14 days of delivery. Items must be in original packaging.",
+			answer: "You can return or exchange unworn shoes within 14 days of delivery. Items must be in original packaging.",
 		},
 		{
 			question: "How should I care for my shoes?",
-			answer:
-				"Clean using a soft brush or cloth. Avoid machine washing and prolonged exposure to water to maintain durability.",
+			answer: "Clean using a soft brush or cloth. Avoid machine washing and prolonged exposure to water to maintain durability.",
 		},
 	];
 
@@ -41,7 +36,7 @@ export default function ProductFAQ() {
 		<section className="max-w-6xl mx-auto px-4 md:px-0 py-16">
 			<div className="grid md:grid-cols-2 gap-10 items-start">
 				{/* Image */}
-				<div>
+				<div className="hidden md:block">
 					<img
 						src="https://www.campusshoes.com/cdn/shop/files/VESPER_VESPER_WHT-NAVY_07.webp?v=1758174770"
 						alt="Comfortable performance shoes"
@@ -74,7 +69,9 @@ export default function ProductFAQ() {
 									key={index}
 									className="px-6 py-5 cursor-pointer"
 									onClick={() =>
-										setOpenIndex(isOpen ? null : index)
+										setOpenIndex(
+											isOpen ? null : index,
+										)
 									}
 								>
 									<div className="flex items-center justify-between gap-4">
@@ -84,7 +81,9 @@ export default function ProductFAQ() {
 										<ChevronDown
 											size={18}
 											className={`transition-transform duration-300 ${
-												isOpen ? "rotate-180" : ""
+												isOpen
+													? "rotate-180"
+													: ""
 											}`}
 										/>
 									</div>
