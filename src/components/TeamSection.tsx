@@ -10,19 +10,19 @@ export default function TeamSection() {
 			name: "Aaditya Mall",
 			role: "Product Design",
 			image:
-				"../../public/Team/aaditya_profile.jpeg",
+				"/Team/aaditya_profile.jpeg",
 		},
 		{
 			name: "Shivam Kulkarni",
 			role: "Engineering",
 			image:
-				"../../public/Team/shivam_profile.jpg",
+				"/Team/shivam_profile.jpg",
 		},
 		{
 			name: "Mansi Chudasama",
 			role: "Marketing & Growth",
 			image:
-				"../../public/Team/mansi_profile.png",
+				"/Team/mansi_profile.png",
 		},
 	];
 
