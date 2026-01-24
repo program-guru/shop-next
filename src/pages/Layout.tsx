@@ -1,9 +1,9 @@
-import type { ReactNode } from "react";
+import { Outlet } from "react-router";
 import Footer from "../components/Footer";
 import Navbar from "../components/NavBar";
 import ThemeProvider from "../context/ThemeProvider";
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default function Layout() {
 	return (
 		<ThemeProvider>
 			<div className="app-container min-h-screen flex flex-col">
@@ -11,7 +11,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 					<Navbar />
 				</header>
 
-				<main className="grow m-5">{children}</main>
+				<main className="grow m-5"><Outlet /></main>
 
 				<footer>
 					<Footer />

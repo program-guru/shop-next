@@ -14,6 +14,7 @@
 	/* Surfaces */
 	--color-background: oklch(0.965 0.015 85);
 	--color-surface: oklch(0.99 0.01 85);
+	--color-surface-hover: oklch(0.95 0.01 85);
 
 	/* Text */
 	--color-text: oklch(0.23 0.01 260);
@@ -33,6 +34,7 @@
 .dark {
 	--color-background: oklch(0.16 0.02 260);
 	--color-surface: oklch(0.21 0.02 260);
+	--color-surface-hover: oklch(0.27 0.02 260);
 
 	--color-text: oklch(0.92 0.01 260);
 	--color-text-muted: oklch(0.62 0.01 260);

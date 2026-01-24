@@ -1,15 +1,16 @@
+import { useTheme } from "../context/ThemeContext";
+import { Link } from "react-router";
 import logoLight from "../assets/logo-light.png";
 import logoDark from "../assets/logo-dark.png";
-import { useTheme } from "../context/ThemeContext";
 
 export default function Footer() {
 	const { theme } = useTheme();
 
-	const menuItems = [
-		{ name: "Home", href: "#" },
-		{ name: "Products", href: "#" },
-		{ name: "About Us", href: "#" },
-		{ name: "Contact Us", href: "#" },
+	const links = [
+		{ name: "Home", href: "/" },
+		{ name: "Products", href: "/products" },
+		{ name: "About Us", href: "/about" },
+		{ name: "Contact Us", href: "/contact" },
 	];
 
 	return (
@@ -62,15 +63,13 @@ export default function Footer() {
 						<h2 className="font-semibold mb-5 text-text">
 							Company
 						</h2>
-						{menuItems.map((item) => (
-							<a
-								key={item.name}
-								className="hover:text-primary transition
-"
-								href={item.href}
+						{links.map((item) => (
+							<Link
+								to={item.href}
+								className="hover:text-primary transition"
 							>
 								{item.name}
-							</a>
+							</Link>
 						))}
 					</div>
 				</div>
