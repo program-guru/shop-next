@@ -1,6 +1,10 @@
 import logoLight from "../assets/logo-light.png";
+import logoDark from "../assets/logo-dark.png";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Footer() {
+	const { theme } = useTheme();
+
 	const menuItems = [
 		{ name: "Home", href: "#" },
 		{ name: "Products", href: "#" },
@@ -41,12 +45,12 @@ export default function Footer() {
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">
 				<div className="sm:col-span-2 lg:col-span-1">
 					<a href="https://prebuiltui.com">
-                <img
-                    src={logoLight}
-                    className="h-8 md:h-12"
-                    alt="ShopNext Logo"
-                />
-            </a>
+						<img
+							src={theme === "dark" ? logoDark : logoLight}
+							className="h-8 md:h-12"
+							alt="ShopNext Logo"
+						/>
+					</a>
 					<p className="text-sm/7 mt-6">
 						ShopNext is a modern e-commerce platform that
 						provides seamless shopping experiences with
@@ -99,7 +103,7 @@ export default function Footer() {
 						href="https://prebuiltui.com"
 						className="hover:text-primary"
 					>
-						PrebuiltUI
+						ShopNext
 					</a>{" "}
 					All Right Reserved.
 				</p>

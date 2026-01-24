@@ -1,9 +1,12 @@
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import logoLight from "../assets/logo-light.png";
+import logoDark from "../assets/logo-dark.png";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+    const { theme } = useTheme();
 
     const menuItems = [
         { name: "Home", href: "#" },
@@ -20,7 +23,7 @@ export default function Navbar() {
         <header className="flex items-center justify-between px-6 mt-3 py-3 md:py-4 shadow max-w-5xl rounded-full mx-auto w-full bg-surface text-text">
             <a href="https://prebuiltui.com">
                 <img
-                    src={logoLight}
+                    src={theme === "dark" ? logoDark : logoLight}
                     className="h-8 md:h-10"
                     alt="ShopNext Logo"
                 />
