@@ -21,16 +21,10 @@ export default function Products() {
 
   // 2. Fetch Data on Mount
   useEffect(() => {
-  if (status === "idle") {
-    // Dispatch returns a promise that has an .abort() method
-    const promise = dispatch(fetchProducts());
-
-    // Cleanup function runs when component unmounts
-    return () => {
-      promise.abort(); 
-    };
-  }
-}, [status, dispatch]);
+    if (status === "idle") {
+      dispatch(fetchProducts());
+    }
+  }, [status, dispatch]);
 
   return (
     <div className="container mx-auto px-2 py-2">

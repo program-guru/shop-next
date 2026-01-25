@@ -11,17 +11,11 @@ const initialState: ProductState = {
 // SIMULATED API CALL
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
-  async (_, { signal }) => { 
-    return new Promise<Product[]>((resolve, reject) => {
-      const timer = setTimeout(() => {
+  async () => {
+    return new Promise<Product[]>((resolve) => {
+      setTimeout(() => {
         resolve(productsData as Product[]);
-      }, 500);
-
-      // 2. Listen for abort event
-      signal.addEventListener('abort', () => {
-        clearTimeout(timer); 
-        reject(new Error('Aborted')); 
-      });
+      }, 1000); 
     });
   }
 );
