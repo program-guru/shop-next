@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { ChevronRight, X, Search, ChevronDown, Star } from "lucide-react";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import {
@@ -11,28 +11,28 @@ import {
 	setSortBy,
 	resetFilters,
 } from "../store/features/filters/filterSlice";
-import type { SortOption } from "../types/Filters";
 import {
 	selectUniqueBrands,
 	selectUniqueCategories,
 	selectUniqueSizes,
 } from "../store/features/products/productSelectors";
+import type { SortOption } from "../types/Filters";
 
 export default function Sidebar() {
 	const dispatch = useAppDispatch();
 
-	// Read Global State
+	// Read Global State from Redux
 	const {
 		searchQuery,
-		brands,
-		categories,
-		sizes,
+		brands: selectedBrands,
+		categories: selectedCategories,
+		sizes: selectedSizes,
 		minRating,
 		priceRange,
 		sortBy,
 	} = useAppSelector((state) => state.filters);
 
-	// Dynamic Data Options
+	// Read Dynamic Data Options (Derived from Product List)
 	const availableBrands = useAppSelector(selectUniqueBrands);
 	const availableCategories = useAppSelector(selectUniqueCategories);
 	const availableSizes = useAppSelector(selectUniqueSizes);
@@ -40,12 +40,46 @@ export default function Sidebar() {
 	// Local UI State
 	const [isOpen, setIsOpen] = useState(false);
 	const [hoverRating, setHoverRating] = useState<number | null>(null);
+	const [localPrice, setLocalPrice] = useState(priceRange);
+	const [localSearch, setLocalSearch] = useState(searchQuery);
 
-	// Constants
+	useEffect(() => {
+		// Debounce search input by 500ms
+		const handler = setTimeout(() => {
+			dispatch(setSearchQuery(localSearch));
+		}, 500);
+
+		return () => clearTimeout(handler);
+	}, [localSearch, dispatch]);
+
+	// Sync local state if Redux changes 
+	useEffect(() => {
+		setLocalSearch(searchQuery);
+	}, [searchQuery]);
+
 	const MIN_PRICE_LIMIT = 0;
 	const MAX_PRICE_LIMIT = 20000;
 
-	// Sort Chips: UI
+	useEffect(() => {
+		// Debounce price range updates by 300ms
+		const handler = setTimeout(() => {
+			if (
+				localPrice.min !== priceRange.min ||
+				localPrice.max !== priceRange.max
+			) {
+				dispatch(setPriceRange(localPrice));
+			}
+		}, 300);
+
+		return () => clearTimeout(handler);
+	}, [localPrice, dispatch, priceRange]);
+
+	// Sync local state if Redux changes 
+	useEffect(() => {
+		setLocalPrice(priceRange);
+	}, [priceRange]);
+
+	// Visual Helper: Sort selected chips to the top
 	function sortChips(items: string[], selected: string[]) {
 		return [...items].sort((a, b) => {
 			const aSelected = selected.includes(a);
@@ -56,23 +90,23 @@ export default function Sidebar() {
 	}
 
 	const sortedBrands = useMemo(
-		() => sortChips(availableBrands, brands),
-		[brands, availableBrands],
+		() => sortChips(availableBrands, selectedBrands),
+		[availableBrands, selectedBrands],
 	);
 	const sortedCategories = useMemo(
-		() => sortChips(availableCategories, categories),
-		[categories, availableCategories],
+		() => sortChips(availableCategories, selectedCategories),
+		[availableCategories, selectedCategories],
 	);
 
-	// Handle Price Range Changes
+	// Handlers for Local Price State
 	function handleMinPriceChange(e: React.ChangeEvent<HTMLInputElement>) {
-		const value = Math.min(Number(e.target.value), priceRange.max - 500);
-		dispatch(setPriceRange({ min: value, max: priceRange.max }));
+		const value = Math.min(Number(e.target.value), localPrice.max - 500);
+		setLocalPrice((prev) => ({ ...prev, min: value }));
 	}
 
 	function handleMaxPriceChange(e: React.ChangeEvent<HTMLInputElement>) {
-		const value = Math.max(Number(e.target.value), priceRange.min + 500);
-		dispatch(setPriceRange({ min: priceRange.min, max: value }));
+		const value = Math.max(Number(e.target.value), localPrice.min + 500);
+		setLocalPrice((prev) => ({ ...prev, max: value }));
 	}
 
 	return (
@@ -137,7 +171,7 @@ export default function Sidebar() {
 					</div>
 				</div>
 
-				{/* Content */}
+				{/* Scrollable Content */}
 				<div
 					className="
           p-4 space-y-5 overflow-y-auto flex-1
@@ -150,13 +184,9 @@ export default function Sidebar() {
 							<input
 								type="text"
 								placeholder="Search..."
-								value={searchQuery}
+								value={localSearch}
 								onChange={(e) =>
-									dispatch(
-										setSearchQuery(
-											e.target.value,
-										),
-									)
+									setLocalSearch(e.target.value)
 								}
 								className="w-full pl-8 pr-3 py-1.5 bg-background border border-border rounded-md text-sm focus:outline-none focus:border-primary transition-colors"
 							/>
@@ -174,7 +204,7 @@ export default function Sidebar() {
 						<div className="flex flex-wrap gap-1.5">
 							{sortedBrands.map((brand) => {
 								const isSelected =
-									brands.includes(brand);
+									selectedBrands.includes(brand);
 								return (
 									<button
 										key={brand}
@@ -204,7 +234,7 @@ export default function Sidebar() {
 						<div className="flex flex-wrap gap-1.5">
 							{sortedCategories.map((cat) => {
 								const isSelected =
-									categories.includes(cat);
+									selectedCategories.includes(cat);
 								return (
 									<button
 										key={cat}
@@ -234,24 +264,24 @@ export default function Sidebar() {
 							Price Range
 						</label>
 
-						{/* Compact Indicators */}
+						{/* Indicators */}
 						<div className="flex justify-between items-center text-xs font-medium text-text-muted">
 							<span>
-								₹{priceRange.min.toLocaleString()}
+								₹{localPrice.min.toLocaleString()}
 							</span>
 							<span>
-								₹{priceRange.max.toLocaleString()}
+								₹{localPrice.max.toLocaleString()}
 							</span>
 						</div>
 
-						{/* Visual Slider */}
+						{/* Slider Controls */}
 						<div className="relative w-full h-6 flex items-center select-none touch-none">
 							<input
 								type="range"
 								min={MIN_PRICE_LIMIT}
 								max={MAX_PRICE_LIMIT}
 								step={500}
-								value={priceRange.min}
+								value={localPrice.min}
 								onChange={handleMinPriceChange}
 								className="absolute z-20 w-full h-2 opacity-0 cursor-pointer pointer-events-none [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4"
 							/>
@@ -260,31 +290,33 @@ export default function Sidebar() {
 								min={MIN_PRICE_LIMIT}
 								max={MAX_PRICE_LIMIT}
 								step={500}
-								value={priceRange.max}
+								value={localPrice.max}
 								onChange={handleMaxPriceChange}
 								className="absolute z-20 w-full h-2 opacity-0 cursor-pointer pointer-events-none [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4"
 							/>
 
+							{/* Track Background */}
 							<div className="relative w-full h-1 bg-border rounded-lg z-10">
 								<div
 									className="absolute h-full bg-primary rounded-lg"
 									style={{
-										left: `${(priceRange.min / MAX_PRICE_LIMIT) * 100}%`,
-										right: `${100 - (priceRange.max / MAX_PRICE_LIMIT) * 100}%`,
+										left: `${(localPrice.min / MAX_PRICE_LIMIT) * 100}%`,
+										right: `${100 - (localPrice.max / MAX_PRICE_LIMIT) * 100}%`,
 									}}
 								></div>
 							</div>
 
+							{/* Visual Thumbs*/}
 							<div
 								className="absolute w-3.5 h-3.5 bg-white border-[1.5px] border-primary rounded-full shadow z-10 pointer-events-none"
 								style={{
-									left: `calc(${(priceRange.min / MAX_PRICE_LIMIT) * 100}% - 7px)`,
+									left: `calc(${(localPrice.min / MAX_PRICE_LIMIT) * 100}% - 7px)`,
 								}}
 							></div>
 							<div
 								className="absolute w-3.5 h-3.5 bg-white border-[1.5px] border-primary rounded-full shadow z-10 pointer-events-none"
 								style={{
-									left: `calc(${(priceRange.max / MAX_PRICE_LIMIT) * 100}% - 7px)`,
+									left: `calc(${(localPrice.max / MAX_PRICE_LIMIT) * 100}% - 7px)`,
 								}}
 							></div>
 						</div>
@@ -354,7 +386,8 @@ export default function Sidebar() {
 						</label>
 						<div className="grid grid-cols-4 gap-1.5">
 							{availableSizes.map((size) => {
-								const isSelected = sizes.includes(size);
+								const isSelected =
+									selectedSizes.includes(size);
 								return (
 									<button
 										key={size}
