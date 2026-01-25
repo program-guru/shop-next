@@ -1,328 +1,328 @@
 [
-  {
-    "id": 1,
-    "name": "MACTREE Formal Leather Shoes",
-    "brand": "MACTREE",
-    "description": "Premium formal leather shoes suitable for office and formal occasions.",
-    "price": 2499,
-    "rating": 4.2,
-    "category": ["Formals", "Office Wear", "Leather", "Men"],
-    "mainImage": "/Products/Formals/MACTREE/image1.jpg",
-    "images": [
-      "/Products/Formals/MACTREE/image1.jpg",
-      "/Products/Formals/MACTREE/image2.jpg",
-      "/Products/Formals/MACTREE/image3.jpg",
-      "/Products/Formals/MACTREE/image4.jpg"
-    ],
-    "stock": { "7": 10, "8": 15, "9": 12, "10": 8 },
-    "isFeatured": false
-  },
-  {
-    "id": 2,
-    "name": "Centrino Formal Derby Shoes",
-    "brand": "Centrino",
-    "description": "Classic derby-style formal shoes with a polished finish.",
-    "price": 2299,
-    "rating": 4.1,
-    "category": ["Formals", "Office Wear", "Lace-Up", "Men"],
-    "mainImage": "/Products/Formals/Centrino/image1.jpg",
-    "images": [
-      "/Products/Formals/Centrino/image1.jpg",
-      "/Products/Formals/Centrino/image2.jpg",
-      "/Products/Formals/Centrino/image3.jpg",
-      "/Products/Formals/Centrino/image4.jpg"
-    ],
-    "stock": { "7": 9, "8": 14, "9": 11, "10": 6 },
-    "isFeatured": false
-  },
-  {
-    "id": 3,
-    "name": "Red Chief Genuine Leather Formals",
-    "brand": "Red Chief",
-    "description": "Durable genuine leather shoes designed for long-lasting comfort.",
-    "price": 3199,
-    "rating": 4.4,
-    "category": ["Formals", "Office Wear", "Leather", "Men"],
-    "mainImage": "/Products/Formals/Red Chief/image1.jpg",
-    "images": [
-      "/Products/Formals/Red Chief/image1.jpg",
-      "/Products/Formals/Red Chief/image2.jpg",
-      "/Products/Formals/Red Chief/image3.jpg",
-      "/Products/Formals/Red Chief/image4.jpg"
-    ],
-    "stock": { "8": 10, "9": 13, "10": 9 },
-    "isFeatured": true
-  },
-  {
-    "id": 4,
-    "name": "Stylelure Modern Formal Shoes",
-    "brand": "Stylelure",
-    "description": "Modern slim-profile formal shoes with cushioned insole.",
-    "price": 1999,
-    "rating": 4.0,
-    "category": ["Formals", "Office Wear", "Casual Formals", "Men"],
-    "mainImage": "/Products/Formals/Stylelure/image1.jpg",
-    "images": [
-      "/Products/Formals/Stylelure/image1.jpg",
-      "/Products/Formals/Stylelure/image2.jpg",
-      "/Products/Formals/Stylelure/image3.jpg",
-      "/Products/Formals/Stylelure/image4.jpg"
-    ],
-    "stock": { "7": 12, "8": 18, "9": 14 },
-    "isFeatured": false
-  },
-  {
-    "id": 5,
-    "name": "LM Luis Mercos Formal Slip-ons",
-    "brand": "LM Luis Mercos",
-    "description": "Elegant slip-on formal shoes with a lightweight sole.",
-    "price": 2799,
-    "rating": 4.3,
-    "category": ["Formals", "Office Wear", "Slip-On", "Men"],
-    "mainImage": "/Products/Formals/LM Luis Mercos/image1.jpg",
-    "images": [
-      "/Products/Formals/LM Luis Mercos/image1.jpg",
-      "/Products/Formals/LM Luis Mercos/image2.jpg",
-      "/Products/Formals/LM Luis Mercos/image3.jpg",
-      "/Products/Formals/LM Luis Mercos/image4.jpg"
-    ],
-    "stock": { "8": 10, "9": 10, "10": 7 },
-    "isFeatured": false
-  },
-  {
-    "id": 6,
-    "name": "Bata Mens Boss Ace",
-    "brand": "Bata",
-    "description": "Classic Bata formal shoes designed for everyday office wear.",
-    "price": 1899,
-    "rating": 4.1,
-    "category": ["Formals", "Office Wear", "Budget", "Men"],
-    "mainImage": "/Products/Formals/Bata Mens Boss Ace/image1.jpg",
-    "images": [
-      "/Products/Formals/Bata Mens Boss Ace/image1.jpg",
-      "/Products/Formals/Bata Mens Boss Ace/image2.jpg",
-      "/Products/Formals/Bata Mens Boss Ace/image3.jpg",
-      "/Products/Formals/Bata Mens Boss Ace/image4.jpg"
-    ],
-    "stock": { "7": 15, "8": 20, "9": 18 },
-    "isFeatured": true
-  },
+	{
+		"id": 1,
+		"name": "MACTREE Formal Leather Shoes",
+		"brand": "MACTREE",
+		"description": "Premium formal leather shoes suitable for office and formal occasions.",
+		"price": 2499,
+		"rating": 4.2,
+		"category": ["Formals", "Office Wear", "Leather"],
+		"mainImage": "/Products/Formals/MACTREE/image1.jpg",
+		"images": [
+			"/Products/Formals/MACTREE/image1.jpg",
+			"/Products/Formals/MACTREE/image2.jpg",
+			"/Products/Formals/MACTREE/image3.jpg",
+			"/Products/Formals/MACTREE/image4.jpg"
+		],
+		"stock": { "7": 10, "8": 15, "9": 12, "10": 8 },
+		"isFeatured": false
+	},
+	{
+		"id": 2,
+		"name": "Centrino Formal Derby Shoes",
+		"brand": "Centrino",
+		"description": "Classic derby-style formal shoes with a polished finish.",
+		"price": 2299,
+		"rating": 4.1,
+		"category": ["Formals", "Office Wear", "Lace-Up"],
+		"mainImage": "/Products/Formals/Centrino/image1.jpg",
+		"images": [
+			"/Products/Formals/Centrino/image1.jpg",
+			"/Products/Formals/Centrino/image2.jpg",
+			"/Products/Formals/Centrino/image3.jpg",
+			"/Products/Formals/Centrino/image4.jpg"
+		],
+		"stock": { "7": 9, "8": 14, "9": 11, "10": 6 },
+		"isFeatured": false
+	},
+	{
+		"id": 3,
+		"name": "Red Chief Genuine Leather Formals",
+		"brand": "Red Chief",
+		"description": "Durable genuine leather shoes designed for long-lasting comfort.",
+		"price": 3199,
+		"rating": 4.4,
+		"category": ["Formals", "Office Wear", "Leather"],
+		"mainImage": "/Products/Formals/Red Chief/image1.jpg",
+		"images": [
+			"/Products/Formals/Red Chief/image1.jpg",
+			"/Products/Formals/Red Chief/image2.jpg",
+			"/Products/Formals/Red Chief/image3.jpg",
+			"/Products/Formals/Red Chief/image4.jpg"
+		],
+		"stock": { "8": 10, "9": 13, "10": 9 },
+		"isFeatured": true
+	},
+	{
+		"id": 4,
+		"name": "Stylelure Modern Formal Shoes",
+		"brand": "Stylelure",
+		"description": "Modern slim-profile formal shoes with cushioned insole.",
+		"price": 1999,
+		"rating": 4.0,
+		"category": ["Formals", "Office Wear", "Casual Formals"],
+		"mainImage": "/Products/Formals/Stylelure/image1.jpg",
+		"images": [
+			"/Products/Formals/Stylelure/image1.jpg",
+			"/Products/Formals/Stylelure/image2.jpg",
+			"/Products/Formals/Stylelure/image3.jpg",
+			"/Products/Formals/Stylelure/image4.jpg"
+		],
+		"stock": { "7": 12, "8": 18, "9": 14 },
+		"isFeatured": false
+	},
+	{
+		"id": 5,
+		"name": "LM Luis Mercos Formal Slip-ons",
+		"brand": "LM Luis Mercos",
+		"description": "Elegant slip-on formal shoes with a lightweight sole.",
+		"price": 2799,
+		"rating": 4.3,
+		"category": ["Formals", "Office Wear", "Slip-On"],
+		"mainImage": "/Products/Formals/LM Luis Mercos/image1.jpg",
+		"images": [
+			"/Products/Formals/LM Luis Mercos/image1.jpg",
+			"/Products/Formals/LM Luis Mercos/image2.jpg",
+			"/Products/Formals/LM Luis Mercos/image3.jpg",
+			"/Products/Formals/LM Luis Mercos/image4.jpg"
+		],
+		"stock": { "8": 10, "9": 10, "10": 7 },
+		"isFeatured": false
+	},
+	{
+		"id": 6,
+		"name": "Bata Mens Boss Ace",
+		"brand": "Bata",
+		"description": "Classic Bata formal shoes designed for everyday office wear.",
+		"price": 1899,
+		"rating": 4.1,
+		"category": ["Formals", "Office Wear", "Budget"],
+		"mainImage": "/Products/Formals/Bata Mens Boss Ace/image1.jpg",
+		"images": [
+			"/Products/Formals/Bata Mens Boss Ace/image1.jpg",
+			"/Products/Formals/Bata Mens Boss Ace/image2.jpg",
+			"/Products/Formals/Bata Mens Boss Ace/image3.jpg",
+			"/Products/Formals/Bata Mens Boss Ace/image4.jpg"
+		],
+		"stock": { "7": 15, "8": 20, "9": 18 },
+		"isFeatured": true
+	},
 
-  {
-    "id": 7,
-    "name": "Nike Air Force 1",
-    "brand": "Nike",
-    "description": "Iconic sneakers with timeless design and superior comfort.",
-    "price": 7495,
-    "rating": 4.6,
-    "category": ["Sneakers", "Casual Wear", "Low-Top", "Men"],
-    "mainImage": "/Products/Sneakers/Nike Air Force 1/image1.jpg",
-    "images": [
-      "/Products/Sneakers/Nike Air Force 1/image1.jpg",
-      "/Products/Sneakers/Nike Air Force 1/image2.jpg",
-      "/Products/Sneakers/Nike Air Force 1/image3.jpg",
-      "/Products/Sneakers/Nike Air Force 1/image4.jpg"
-    ],
-    "stock": { "8": 12, "9": 15, "10": 10 },
-    "isFeatured": true
-  },
-  {
-    "id": 8,
-    "name": "Air Jordan 1 Mid SE",
-    "brand": "Jordan",
-    "description": "Mid-top sneakers offering premium materials and street style.",
-    "price": 11999,
-    "rating": 4.7,
-    "category": ["Sneakers", "Casual Wear", "Basketball", "Men"],
-    "mainImage": "/Products/Sneakers/Air Jordan 1 Mid SE/image1.jpg",
-    "images": [
-      "/Products/Sneakers/Air Jordan 1 Mid SE/image1.jpg",
-      "/Products/Sneakers/Air Jordan 1 Mid SE/image2.jpg",
-      "/Products/Sneakers/Air Jordan 1 Mid SE/image3.jpg",
-      "/Products/Sneakers/Air Jordan 1 Mid SE/image4.jpg"
-    ],
-    "stock": { "8": 8, "9": 10, "10": 6 },
-    "isFeatured": true
-  },
-  {
-    "id": 9,
-    "name": "Puma Rebound Lay Up",
-    "brand": "Puma",
-    "description": "Basketball-inspired sneakers with enhanced ankle support.",
-    "price": 5499,
-    "rating": 4.3,
-    "category": ["Sneakers", "Basketball", "High-Top", "Men"],
-    "mainImage": "/Products/Sneakers/Puma Rebound Lay Up/image1.jpg",
-    "images": [
-      "/Products/Sneakers/Puma Rebound Lay Up/image1.jpg",
-      "/Products/Sneakers/Puma Rebound Lay Up/image2.jpg",
-      "/Products/Sneakers/Puma Rebound Lay Up/image3.jpg",
-      "/Products/Sneakers/Puma Rebound Lay Up/image4.jpg"
-    ],
-    "stock": { "8": 14, "9": 16, "10": 11 },
-    "isFeatured": false
-  },
-  {
-    "id": 10,
-    "name": "Adidas Forum Low Shoes",
-    "brand": "Adidas",
-    "description": "Retro basketball sneakers redesigned for everyday wear.",
-    "price": 6999,
-    "rating": 4.5,
-    "category": ["Sneakers", "Casual Wear", "Low-Top", "Men"],
-    "mainImage": "/Products/Sneakers/Adidas Forum Low Shoes/image1.jpg",
-    "images": [
-      "/Products/Sneakers/Adidas Forum Low Shoes/image1.jpg",
-      "/Products/Sneakers/Adidas Forum Low Shoes/image2.jpg",
-      "/Products/Sneakers/Adidas Forum Low Shoes/image3.jpg",
-      "/Products/Sneakers/Adidas Forum Low Shoes/image4.jpg"
-    ],
-    "stock": { "8": 10, "9": 12, "10": 9 },
-    "isFeatured": false
-  },
-  {
-    "id": 11,
-    "name": "Nike Air Max 1 Premium",
-    "brand": "Nike",
-    "description": "Premium Air Max sneakers with cushioned sole and breathable upper.",
-    "price": 13995,
-    "rating": 4.6,
-    "category": ["Sneakers", "Casual Wear", "Running Style", "Men"],
-    "mainImage": "/Products/Sneakers/Nike Air Max 1 Premium/image1.jpg",
-    "images": [
-      "/Products/Sneakers/Nike Air Max 1 Premium/image1.jpg",
-      "/Products/Sneakers/Nike Air Max 1 Premium/image2.jpg",
-      "/Products/Sneakers/Nike Air Max 1 Premium/image3.jpg",
-      "/Products/Sneakers/Nike Air Max 1 Premium/image4.jpg"
-    ],
-    "stock": { "8": 6, "9": 8, "10": 5 },
-    "isFeatured": true
-  },
-  {
-    "id": 12,
-    "name": "Converse Chuck 70 High Top",
-    "brand": "Converse",
-    "description": "Classic high-top sneakers with vintage-inspired design.",
-    "price": 6499,
-    "rating": 4.4,
-    "category": ["Sneakers", "Casual Wear", "High-Top", "Men"],
-    "mainImage": "/Products/Sneakers/Converse Chuck 70 High Top/image1.jpg",
-    "images": [
-      "/Products/Sneakers/Converse Chuck 70 High Top/image1.jpg",
-      "/Products/Sneakers/Converse Chuck 70 High Top/image2.jpg",
-      "/Products/Sneakers/Converse Chuck 70 High Top/image3.jpg",
-      "/Products/Sneakers/Converse Chuck 70 High Top/image4.jpg"
-    ],
-    "stock": { "7": 10, "8": 12, "9": 14 },
-    "isFeatured": false
-  },
+	{
+		"id": 7,
+		"name": "Nike Air Force 1",
+		"brand": "Nike",
+		"description": "Iconic sneakers with timeless design and superior comfort.",
+		"price": 7495,
+		"rating": 4.6,
+		"category": ["Sneakers", "Casual Wear", "Low-Top"],
+		"mainImage": "/Products/Sneakers/Nike Air Force 1/image1.jpg",
+		"images": [
+			"/Products/Sneakers/Nike Air Force 1/image1.jpg",
+			"/Products/Sneakers/Nike Air Force 1/image2.jpg",
+			"/Products/Sneakers/Nike Air Force 1/image3.jpg",
+			"/Products/Sneakers/Nike Air Force 1/image4.jpg"
+		],
+		"stock": { "8": 12, "9": 15, "10": 10 },
+		"isFeatured": true
+	},
+	{
+		"id": 8,
+		"name": "Air Jordan 1 Mid SE",
+		"brand": "Jordan",
+		"description": "Mid-top sneakers offering premium materials and street style.",
+		"price": 11999,
+		"rating": 4.7,
+		"category": ["Sneakers", "Casual Wear", "Basketball"],
+		"mainImage": "/Products/Sneakers/Air Jordan 1 Mid SE/image1.jpg",
+		"images": [
+			"/Products/Sneakers/Air Jordan 1 Mid SE/image1.jpg",
+			"/Products/Sneakers/Air Jordan 1 Mid SE/image2.jpg",
+			"/Products/Sneakers/Air Jordan 1 Mid SE/image3.jpg",
+			"/Products/Sneakers/Air Jordan 1 Mid SE/image4.jpg"
+		],
+		"stock": { "8": 8, "9": 10, "10": 6 },
+		"isFeatured": true
+	},
+	{
+		"id": 9,
+		"name": "Puma Rebound Lay Up",
+		"brand": "Puma",
+		"description": "Basketball-inspired sneakers with enhanced ankle support.",
+		"price": 5499,
+		"rating": 4.3,
+		"category": ["Sneakers", "Basketball", "High-Top"],
+		"mainImage": "/Products/Sneakers/Puma Rebound Lay Up/image1.jpg",
+		"images": [
+			"/Products/Sneakers/Puma Rebound Lay Up/image1.jpg",
+			"/Products/Sneakers/Puma Rebound Lay Up/image2.jpg",
+			"/Products/Sneakers/Puma Rebound Lay Up/image3.jpg",
+			"/Products/Sneakers/Puma Rebound Lay Up/image4.jpg"
+		],
+		"stock": { "8": 14, "9": 16, "10": 11 },
+		"isFeatured": false
+	},
+	{
+		"id": 10,
+		"name": "Adidas Forum Low Shoes",
+		"brand": "Adidas",
+		"description": "Retro basketball sneakers redesigned for everyday wear.",
+		"price": 6999,
+		"rating": 4.5,
+		"category": ["Sneakers", "Casual Wear", "Low-Top"],
+		"mainImage": "/Products/Sneakers/Adidas Forum Low Shoes/image1.jpg",
+		"images": [
+			"/Products/Sneakers/Adidas Forum Low Shoes/image1.jpg",
+			"/Products/Sneakers/Adidas Forum Low Shoes/image2.jpg",
+			"/Products/Sneakers/Adidas Forum Low Shoes/image3.jpg",
+			"/Products/Sneakers/Adidas Forum Low Shoes/image4.jpg"
+		],
+		"stock": { "8": 10, "9": 12, "10": 9 },
+		"isFeatured": false
+	},
+	{
+		"id": 11,
+		"name": "Nike Air Max 1 Premium",
+		"brand": "Nike",
+		"description": "Premium Air Max sneakers with cushioned sole and breathable upper.",
+		"price": 13995,
+		"rating": 4.6,
+		"category": ["Sneakers", "Casual Wear", "Running Style"],
+		"mainImage": "/Products/Sneakers/Nike Air Max 1 Premium/image1.jpg",
+		"images": [
+			"/Products/Sneakers/Nike Air Max 1 Premium/image1.jpg",
+			"/Products/Sneakers/Nike Air Max 1 Premium/image2.jpg",
+			"/Products/Sneakers/Nike Air Max 1 Premium/image3.jpg",
+			"/Products/Sneakers/Nike Air Max 1 Premium/image4.jpg"
+		],
+		"stock": { "8": 6, "9": 8, "10": 5 },
+		"isFeatured": true
+	},
+	{
+		"id": 12,
+		"name": "Converse Chuck 70 High Top",
+		"brand": "Converse",
+		"description": "Classic high-top sneakers with vintage-inspired design.",
+		"price": 6499,
+		"rating": 4.4,
+		"category": ["Sneakers", "Casual Wear", "High-Top"],
+		"mainImage": "/Products/Sneakers/Converse Chuck 70 High Top/image1.jpg",
+		"images": [
+			"/Products/Sneakers/Converse Chuck 70 High Top/image1.jpg",
+			"/Products/Sneakers/Converse Chuck 70 High Top/image2.jpg",
+			"/Products/Sneakers/Converse Chuck 70 High Top/image3.jpg",
+			"/Products/Sneakers/Converse Chuck 70 High Top/image4.jpg"
+		],
+		"stock": { "7": 10, "8": 12, "9": 14 },
+		"isFeatured": false
+	},
 
-  {
-    "id": 13,
-    "name": "Nike Precision 6",
-    "brand": "Nike",
-    "description": "Lightweight basketball shoes built for speed and control.",
-    "price": 6295,
-    "rating": 4.3,
-    "category": ["Sports Shoes", "Basketball", "Training", "Men"],
-    "mainImage": "/Products/Sports Shoes/Nike Precision 6/image1.jpg",
-    "images": [
-      "/Products/Sports Shoes/Nike Precision 6/image1.jpg",
-      "/Products/Sports Shoes/Nike Precision 6/image2.jpg",
-      "/Products/Sports Shoes/Nike Precision 6/image3.jpg",
-      "/Products/Sports Shoes/Nike Precision 6/image4.jpg"
-    ],
-    "stock": { "8": 12, "9": 14, "10": 10 },
-    "isFeatured": false
-  },
-  {
-    "id": 14,
-    "name": "Nike Winflo 9 Shield",
-    "brand": "Nike",
-    "description": "Weather-resistant running shoes with responsive cushioning.",
-    "price": 8995,
-    "rating": 4.5,
-    "category": ["Sports Shoes", "Running", "All Weather", "Men"],
-    "mainImage": "/Products/Sports Shoes/Nike Winflo 9 Shield/image1.jpg",
-    "images": [
-      "/Products/Sports Shoes/Nike Winflo 9 Shield/image1.jpg",
-      "/Products/Sports Shoes/Nike Winflo 9 Shield/image2.jpg",
-      "/Products/Sports Shoes/Nike Winflo 9 Shield/image3.jpg",
-      "/Products/Sports Shoes/Nike Winflo 9 Shield/image4.jpg"
-    ],
-    "stock": { "8": 9, "9": 11, "10": 8 },
-    "isFeatured": true
-  },
-  {
-    "id": 15,
-    "name": "Adidas Forum Low Sports",
-    "brand": "Adidas",
-    "description": "Sport-optimized version of the iconic Forum Low silhouette.",
-    "price": 7599,
-    "rating": 4.4,
-    "category": ["Sports Shoes", "Training", "Low-Top", "Men"],
-    "mainImage": "/Products/Sports Shoes/Adidas Forum Low Sports/image1.jpg",
-    "images": [
-      "/Products/Sports Shoes/Adidas Forum Low Sports/image1.jpg",
-      "/Products/Sports Shoes/Adidas Forum Low Sports/image2.jpg",
-      "/Products/Sports Shoes/Adidas Forum Low Sports/image3.jpg",
-      "/Products/Sports Shoes/Adidas Forum Low Sports/image4.jpg"
-    ],
-    "stock": { "8": 10, "9": 12, "10": 9 },
-    "isFeatured": false
-  },
-  {
-    "id": 16,
-    "name": "Air Jordan 1 Retro High",
-    "brand": "Jordan",
-    "description": "High-top basketball shoes with legendary Jordan styling.",
-    "price": 15999,
-    "rating": 4.8,
-    "category": ["Sports Shoes", "Basketball", "High-Top", "Men"],
-    "mainImage": "/Products/Sports Shoes/Air Jordan 1 Retro High/image1.jpg",
-    "images": [
-      "/Products/Sports Shoes/Air Jordan 1 Retro High/image1.jpg",
-      "/Products/Sports Shoes/Air Jordan 1 Retro High/image2.jpg",
-      "/Products/Sports Shoes/Air Jordan 1 Retro High/image3.jpg",
-      "/Products/Sports Shoes/Air Jordan 1 Retro High/image4.jpg"
-    ],
-    "stock": { "8": 6, "9": 8, "10": 5 },
-    "isFeatured": true
-  },
-  {
-    "id": 17,
-    "name": "Adidas Copa Pure Turf Boots",
-    "brand": "Adidas",
-    "description": "Football turf boots designed for precision and ball control.",
-    "price": 9999,
-    "rating": 4.6,
-    "category": ["Sports Shoes", "Football", "Turf", "Men"],
-    "mainImage": "/Products/Sports Shoes/Adidas Copa Pure Turf Boots/image1.jpg",
-    "images": [
-      "/Products/Sports Shoes/Adidas Copa Pure Turf Boots/image1.jpg",
-      "/Products/Sports Shoes/Adidas Copa Pure Turf Boots/image2.jpg",
-      "/Products/Sports Shoes/Adidas Copa Pure Turf Boots/image3.jpg",
-      "/Products/Sports Shoes/Adidas Copa Pure Turf Boots/image4.jpg"
-    ],
-    "stock": { "7": 7, "8": 9, "9": 6 },
-    "isFeatured": false
-  },
-  {
-    "id": 18,
-    "name": "Puma TACTO Mens Football Boots",
-    "brand": "Puma",
-    "description": "Durable football boots built for agility and grip on the field.",
-    "price": 5499,
-    "rating": 4.2,
-    "category": ["Sports Shoes", "Football", "Firm Ground", "Men"],
-    "mainImage": "/Products/Sports Shoes/Puma TACTO Mens Football Boots/image1.jpg",
-    "images": [
-      "/Products/Sports Shoes/Puma TACTO Mens Football Boots/image1.jpg",
-      "/Products/Sports Shoes/Puma TACTO Mens Football Boots/image2.jpg",
-      "/Products/Sports Shoes/Puma TACTO Mens Football Boots/image3.jpg",
-      "/Products/Sports Shoes/Puma TACTO Mens Football Boots/image4.jpg"
-    ],
-    "stock": { "7": 10, "8": 12, "9": 9 },
-    "isFeatured": false
-  }
+	{
+		"id": 13,
+		"name": "Nike Precision 6",
+		"brand": "Nike",
+		"description": "Lightweight basketball shoes built for speed and control.",
+		"price": 6295,
+		"rating": 4.3,
+		"category": ["Sports Shoes", "Basketball", "Training"],
+		"mainImage": "/Products/Sports Shoes/Nike Precision 6/image1.jpg",
+		"images": [
+			"/Products/Sports Shoes/Nike Precision 6/image1.jpg",
+			"/Products/Sports Shoes/Nike Precision 6/image2.jpg",
+			"/Products/Sports Shoes/Nike Precision 6/image3.jpg",
+			"/Products/Sports Shoes/Nike Precision 6/image4.jpg"
+		],
+		"stock": { "8": 12, "9": 14, "10": 10 },
+		"isFeatured": false
+	},
+	{
+		"id": 14,
+		"name": "Nike Winflo 9 Shield",
+		"brand": "Nike",
+		"description": "Weather-resistant running shoes with responsive cushioning.",
+		"price": 8995,
+		"rating": 4.5,
+		"category": ["Sports Shoes", "Running", "All Weather"],
+		"mainImage": "/Products/Sports Shoes/Nike Winflo 9 Shield/image1.jpg",
+		"images": [
+			"/Products/Sports Shoes/Nike Winflo 9 Shield/image1.jpg",
+			"/Products/Sports Shoes/Nike Winflo 9 Shield/image2.jpg",
+			"/Products/Sports Shoes/Nike Winflo 9 Shield/image3.jpg",
+			"/Products/Sports Shoes/Nike Winflo 9 Shield/image4.jpg"
+		],
+		"stock": { "8": 9, "9": 11, "10": 8 },
+		"isFeatured": true
+	},
+	{
+		"id": 15,
+		"name": "Adidas Forum Low Sports",
+		"brand": "Adidas",
+		"description": "Sport-optimized version of the iconic Forum Low silhouette.",
+		"price": 7599,
+		"rating": 4.4,
+		"category": ["Sports Shoes", "Training", "Low-Top"],
+		"mainImage": "/Products/Sports Shoes/Adidas Forum Low Sports/image1.jpg",
+		"images": [
+			"/Products/Sports Shoes/Adidas Forum Low Sports/image1.jpg",
+			"/Products/Sports Shoes/Adidas Forum Low Sports/image2.jpg",
+			"/Products/Sports Shoes/Adidas Forum Low Sports/image3.jpg",
+			"/Products/Sports Shoes/Adidas Forum Low Sports/image4.jpg"
+		],
+		"stock": { "8": 10, "9": 12, "10": 9 },
+		"isFeatured": false
+	},
+	{
+		"id": 16,
+		"name": "Air Jordan 1 Retro High",
+		"brand": "Jordan",
+		"description": "High-top basketball shoes with legendary Jordan styling.",
+		"price": 15999,
+		"rating": 4.8,
+		"category": ["Sports Shoes", "Basketball", "High-Top"],
+		"mainImage": "/Products/Sports Shoes/Air Jordan 1 Retro High/image1.jpg",
+		"images": [
+			"/Products/Sports Shoes/Air Jordan 1 Retro High/image1.jpg",
+			"/Products/Sports Shoes/Air Jordan 1 Retro High/image2.jpg",
+			"/Products/Sports Shoes/Air Jordan 1 Retro High/image3.jpg",
+			"/Products/Sports Shoes/Air Jordan 1 Retro High/image4.jpg"
+		],
+		"stock": { "8": 6, "9": 8, "10": 5 },
+		"isFeatured": true
+	},
+	{
+		"id": 17,
+		"name": "Adidas Copa Pure Turf Boots",
+		"brand": "Adidas",
+		"description": "Football turf boots designed for precision and ball control.",
+		"price": 9999,
+		"rating": 4.6,
+		"category": ["Sports Shoes", "Football", "Turf"],
+		"mainImage": "/Products/Sports Shoes/Adidas Copa Pure Turf Boots/image1.jpg",
+		"images": [
+			"/Products/Sports Shoes/Adidas Copa Pure Turf Boots/image1.jpg",
+			"/Products/Sports Shoes/Adidas Copa Pure Turf Boots/image2.jpg",
+			"/Products/Sports Shoes/Adidas Copa Pure Turf Boots/image3.jpg",
+			"/Products/Sports Shoes/Adidas Copa Pure Turf Boots/image4.jpg"
+		],
+		"stock": { "7": 7, "8": 9, "9": 6 },
+		"isFeatured": false
+	},
+	{
+		"id": 18,
+		"name": "Puma TACTO Mens Football Boots",
+		"brand": "Puma",
+		"description": "Durable football boots built for agility and grip on the field.",
+		"price": 5499,
+		"rating": 4.2,
+		"category": ["Sports Shoes", "Football", "Firm Ground"],
+		"mainImage": "/Products/Sports Shoes/Puma TACTO Mens Football Boots/image1.jpg",
+		"images": [
+			"/Products/Sports Shoes/Puma TACTO Mens Football Boots/image1.jpg",
+			"/Products/Sports Shoes/Puma TACTO Mens Football Boots/image2.jpg",
+			"/Products/Sports Shoes/Puma TACTO Mens Football Boots/image3.jpg",
+			"/Products/Sports Shoes/Puma TACTO Mens Football Boots/image4.jpg"
+		],
+		"stock": { "7": 10, "8": 12, "9": 9 },
+		"isFeatured": false
+	}
 ]

@@ -4,6 +4,7 @@ import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
 import Home from "./pages/Home";
 import ThemeProvider from "./context/ThemeProvider";
+import Products from "./pages/Products";
 
 export default function App() {
 	return (
@@ -12,6 +13,7 @@ export default function App() {
 				<Routes>
 					<Route element={<Layout />}>
 						<Route path="/" element={<Home />} />
+						<Route path="/products" element={<Products />} />
 						<Route path="/about" element={<AboutUs />} />
 						<Route path="/contact" element={<ContactUs />} />
 					</Route>
