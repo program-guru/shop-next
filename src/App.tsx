@@ -5,20 +5,30 @@ import AboutUs from "./pages/AboutUs";
 import Home from "./pages/Home";
 import ThemeProvider from "./context/ThemeProvider";
 import Products from "./pages/Products";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 export default function App() {
 	return (
-		<ThemeProvider>
-			<BrowserRouter>
-				<Routes>
-					<Route element={<Layout />}>
-						<Route path="/" element={<Home />} />
-						<Route path="/products" element={<Products />} />
-						<Route path="/about" element={<AboutUs />} />
-						<Route path="/contact" element={<ContactUs />} />
-					</Route>
-				</Routes>
-			</BrowserRouter>
-		</ThemeProvider>
+		<Provider store={store}>
+			<ThemeProvider>
+				<BrowserRouter>
+					<Routes>
+						<Route element={<Layout />}>
+							<Route path="/" element={<Home />} />
+							<Route
+								path="/products"
+								element={<Products />}
+							/>
+							<Route path="/about" element={<AboutUs />} />
+							<Route
+								path="/contact"
+								element={<ContactUs />}
+							/>
+						</Route>
+					</Routes>
+				</BrowserRouter>
+			</ThemeProvider>
+		</Provider>
 	);
 }

@@ -2,6 +2,12 @@ export interface Stock {
 	[size: string]: number;
 }
 
+export interface ProductState {
+  items: Product[];
+  status: "idle" | "loading" | "succeeded" | "failed";
+  error: string | null;
+}
+
 export interface Product {
 	id: number;
 	name: string;
