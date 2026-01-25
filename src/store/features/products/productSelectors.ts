@@ -79,7 +79,7 @@ export const selectFilteredProducts = createSelector(
   }
 );
 
-// Selector to get total count (useful for "12 results found" text)
+// Selector to get total count 
 export const selectProductCount = createSelector(
   [selectFilteredProducts],
   (products) => products.length
@@ -87,3 +87,40 @@ export const selectProductCount = createSelector(
 
 // Selector to get loading status
 export const selectProductStatus = (state: RootState) => state.products.status;
+
+// Extract Unique Brands
+export const selectUniqueBrands = createSelector(
+  [selectAllProducts],
+  (products) => {
+    const brands = products.map((p) => p.brand);
+    return [...new Set(brands)].sort();
+  }
+);
+
+// Extract Unique Categories
+export const selectUniqueCategories = createSelector(
+  [selectAllProducts],
+  (products) => {
+    const categories = products.flatMap((p) => p.category);
+    return [...new Set(categories)].sort();
+  }
+);
+
+// 3. Extract Unique Sizes from Stock Objects
+export const selectUniqueSizes = createSelector(
+  [selectAllProducts],
+  (products) => {
+    const allSizes = products.flatMap((p) => 
+      p.stock ? Object.keys(p.stock) : []
+    );
+    
+    return [...new Set(allSizes)].sort((a, b) => {
+      const numA = parseFloat(a);
+      const numB = parseFloat(b);
+      // If both are numbers, subtract to sort numerically
+      if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
+      // Otherwise use string comparison
+      return a.localeCompare(b);
+    });
+  }
+);

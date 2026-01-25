@@ -12,17 +12,11 @@ import {
 	resetFilters,
 } from "../store/features/filters/filterSlice";
 import type { SortOption } from "../types/Filters";
-
-// Dummy data
-const BRANDS = ["Nike", "Adidas", "Puma", "Reebok", "New Balance", "Vans"];
-const CATEGORIES = [
-	"Running",
-	"Casual",
-	"Basketball",
-	"Training",
-	"Skateboarding",
-];
-const SIZES = ["6", "7", "8", "9", "10", "11", "12"];
+import {
+	selectUniqueBrands,
+	selectUniqueCategories,
+	selectUniqueSizes,
+} from "../store/features/products/productSelectors";
 
 export default function Sidebar() {
 	const dispatch = useAppDispatch();
@@ -38,7 +32,12 @@ export default function Sidebar() {
 		sortBy,
 	} = useAppSelector((state) => state.filters);
 
-	// Local UI State (Keep these local as they don't need to be global)
+	// Dynamic Data Options
+	const availableBrands = useAppSelector(selectUniqueBrands);
+	const availableCategories = useAppSelector(selectUniqueCategories);
+	const availableSizes = useAppSelector(selectUniqueSizes);
+
+	// Local UI State
 	const [isOpen, setIsOpen] = useState(false);
 	const [hoverRating, setHoverRating] = useState<number | null>(null);
 
@@ -56,10 +55,13 @@ export default function Sidebar() {
 		});
 	}
 
-	const sortedBrands = useMemo(() => sortChips(BRANDS, brands), [brands]);
+	const sortedBrands = useMemo(
+		() => sortChips(availableBrands, brands),
+		[brands, availableBrands],
+	);
 	const sortedCategories = useMemo(
-		() => sortChips(CATEGORIES, categories),
-		[categories],
+		() => sortChips(availableCategories, categories),
+		[categories, availableCategories],
 	);
 
 	// Handle Price Range Changes
@@ -351,7 +353,7 @@ export default function Sidebar() {
 							Sizes
 						</label>
 						<div className="grid grid-cols-4 gap-1.5">
-							{SIZES.map((size) => {
+							{availableSizes.map((size) => {
 								const isSelected = sizes.includes(size);
 								return (
 									<button
