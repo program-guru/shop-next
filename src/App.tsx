@@ -3,11 +3,12 @@ import Layout from "./pages/Layout";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
 import Home from "./pages/Home";
+import ProductDetails from "./pages/ProductDetails";
+import NotFound from "./pages/NotFound";
 import ThemeProvider from "./context/ThemeProvider";
 import Products from "./pages/Products";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
-import ProductDetails from "./pages/ProductDetails";
 
 export default function App() {
 	return (
@@ -30,6 +31,7 @@ export default function App() {
 								path="/contact"
 								element={<ContactUs />}
 							/>
+							<Route path="*" element={<NotFound />} />
 						</Route>
 					</Routes>
 				</BrowserRouter>
