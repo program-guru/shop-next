@@ -33,7 +33,7 @@ export default function Products() {
 
         <main className="flex-1 w-full min-h-125">
           {/* Header */}
-          <div className="mb-6 flex items-center justify-between">
+          <div className="mb-6 flex items-center justify-end">
             <p className="text-text-muted text-sm">
               {status === 'loading' 
                 ? 'Updating results...' 
@@ -73,7 +73,7 @@ export default function Products() {
 
           {/* STATE: Success (Grid) */}
           {status === "succeeded" && products.length > 0 && (
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 animate-in fade-in duration-500">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 animate-in fade-in duration-500 justify-items-center">
               {products.map((product) => (
                 <ProductCard
                   key={product.id}
