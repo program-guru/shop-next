@@ -30,7 +30,7 @@ export default function ProductCard({ product }: Props) {
 				type: "success",
 			}),
 		);
-	};
+	}
 
 	return (
 		<div
@@ -39,7 +39,7 @@ export default function ProductCard({ product }: Props) {
         flex flex-col md:flex-row
         bg-surface border border-border rounded-2xl overflow-hidden
         max-w-lg
-        h-88 md:h-72
+        md:h-72
         hover:bg-surface-hover transition-colors
         cursor-pointer group relative
       "
@@ -50,14 +50,14 @@ export default function ProductCard({ product }: Props) {
 				alt={product.name}
 				className="
           w-full md:w-64
-          h-64 md:h-full
-          object-cover object-top
+          h-56 md:h-full
+          object-cover object-center
           shrink-0
         "
 			/>
 
 			{/* Content */}
-			<div className="p-5 flex flex-col justify-between h-full flex-1">
+			<div className="p-5 flex flex-col justify-between flex-1">
 				<div>
 					<h3 className="text-lg font-heading font-semibold text-text leading-tight line-clamp-2 group-hover:text-primary transition-colors">
 						{product.name}
