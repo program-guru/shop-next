@@ -3,9 +3,9 @@ export interface Stock {
 }
 
 export interface ProductState {
-  items: Product[];
-  status: "idle" | "loading" | "succeeded" | "failed";
-  error: string | null;
+	items: Product[];
+	status: "idle" | "loading" | "succeeded" | "failed";
+	error: string | null;
 }
 
 export interface Product {

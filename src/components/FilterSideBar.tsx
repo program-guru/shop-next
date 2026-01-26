@@ -52,7 +52,7 @@ export default function Sidebar() {
 		return () => clearTimeout(handler);
 	}, [localSearch, dispatch]);
 
-	// Sync local state if Redux changes 
+	// Sync local state if Redux changes
 	useEffect(() => {
 		setLocalSearch(searchQuery);
 	}, [searchQuery]);
@@ -74,7 +74,7 @@ export default function Sidebar() {
 		return () => clearTimeout(handler);
 	}, [localPrice, dispatch, priceRange]);
 
-	// Sync local state if Redux changes 
+	// Sync local state if Redux changes
 	useEffect(() => {
 		setLocalPrice(priceRange);
 	}, [priceRange]);

@@ -3,9 +3,8 @@ import type { ReactNode } from "react";
 import { ThemeContext } from "./ThemeContext";
 import type { Theme } from "../types/Theme";
 
-
 export default function ThemeProvider({ children }: { children: ReactNode }) {
-  // Check Local Storage or System Preference on first load
+	// Check Local Storage or System Preference on first load
 	const [theme, setTheme] = useState<Theme>(() => {
 		if (typeof window !== "undefined") {
 			// Check if user has a saved preference
@@ -21,7 +20,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
 		return "light";
 	});
 
-  //  Sync React State with the Local Storage
+	//  Sync React State with the Local Storage
 	useEffect(() => {
 		const root = window.document.documentElement;
 
@@ -34,13 +33,11 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
 		}
 	}, [theme]);
 
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  };
+	const toggleTheme = () => {
+		setTheme((prev) => (prev === "light" ? "dark" : "light"));
+	};
 
-  return (
-    <ThemeContext value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext>
-  );
-};
+	return (
+		<ThemeContext value={{ theme, toggleTheme }}>{children}</ThemeContext>
+	);
+}

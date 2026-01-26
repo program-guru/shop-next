@@ -45,13 +45,13 @@ export default function Footer() {
 			</svg>
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">
 				<div className="sm:col-span-2 lg:col-span-1">
-					<a href="https://prebuiltui.com">
+					<Link to="/">
 						<img
 							src={theme === "dark" ? logoDark : logoLight}
 							className="h-8 md:h-12"
 							alt="ShopNext Logo"
 						/>
-					</a>
+					</Link>
 					<p className="text-sm/7 mt-6">
 						ShopNext is a modern e-commerce platform that
 						provides seamless shopping experiences with
@@ -99,12 +99,9 @@ export default function Footer() {
 			<div className="flex flex-col md:flex-row items-center justify-between gap-4 py-4 border-t mt-6 border-border">
 				<p className="text-center">
 					Copyright 2025 ©{" "}
-					<a
-						href="https://prebuiltui.com"
-						className="hover:text-primary"
-					>
+					<Link to="/" className="hover:text-primary">
 						ShopNext
-					</a>{" "}
+					</Link>{" "}
 					All Right Reserved.
 				</p>
 				<div className="flex items-center gap-4">

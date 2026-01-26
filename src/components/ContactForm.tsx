@@ -2,7 +2,6 @@ import { useState, useRef } from "react";
 import type { FormEvent } from "react";
 import type { Fields, Touched, Errors } from "../types/Contact";
 
-
 export default function ContactSection() {
 	const [fields, setFields] = useState<Fields>({
 		name: "",
@@ -20,7 +19,7 @@ export default function ContactSection() {
 	const emailRef = useRef<HTMLInputElement>(null);
 	const messageRef = useRef<HTMLTextAreaElement>(null);
 
-	// Validation 
+	// Validation
 	function validate(data: Fields): Errors {
 		const errors: Errors = {};
 
@@ -43,7 +42,7 @@ export default function ContactSection() {
 		}
 
 		return errors;
-	};
+	}
 
 	const allErrors = validate(fields);
 
@@ -87,12 +86,11 @@ export default function ContactSection() {
 			email: false,
 			message: false,
 		});
-	};
+	}
 
 	return (
 		<section className="flex items-center justify-center py-16 px-4">
 			<div className="grid md:grid-cols-2 gap-10 lg:gap-20 max-w-7xl w-full items-center">
-
 				{/* Form */}
 				<div className="p-6 bg-surface border border-border rounded-2xl">
 					<h1 className="text-3xl font-heading font-semibold text-text mb-3">
@@ -100,11 +98,11 @@ export default function ContactSection() {
 					</h1>
 
 					<p className="text-sm text-text-muted mb-8 max-w-md">
-						Questions about sizing, orders, or returns? We’re here to help.
+						Questions about sizing, orders, or returns? We’re
+						here to help.
 					</p>
 
 					<form onSubmit={handleSubmit} noValidate>
-
 						{/* Name */}
 						<div className="mb-5">
 							<label className="block text-sm text-text-muted mb-2">
@@ -115,10 +113,16 @@ export default function ContactSection() {
 								type="text"
 								value={fields.name}
 								onChange={(e) =>
-									setFields({ ...fields, name: e.target.value })
+									setFields({
+										...fields,
+										name: e.target.value,
+									})
 								}
 								onBlur={() =>
-									setTouched({ ...touched, name: true })
+									setTouched({
+										...touched,
+										name: true,
+									})
 								}
 								className={`w-full px-3 py-3 border rounded-lg text-sm bg-background outline-none transition-colors
 									${visibleErrors.name ? "border-danger" : "border-border focus:border-primary"}`}
@@ -140,10 +144,16 @@ export default function ContactSection() {
 								type="email"
 								value={fields.email}
 								onChange={(e) =>
-									setFields({ ...fields, email: e.target.value })
+									setFields({
+										...fields,
+										email: e.target.value,
+									})
 								}
 								onBlur={() =>
-									setTouched({ ...touched, email: true })
+									setTouched({
+										...touched,
+										email: true,
+									})
 								}
 								className={`w-full px-3 py-3 border rounded-lg text-sm bg-background outline-none transition-colors
 									${visibleErrors.email ? "border-danger" : "border-border focus:border-primary"}`}
@@ -165,10 +175,16 @@ export default function ContactSection() {
 								rows={4}
 								value={fields.message}
 								onChange={(e) =>
-									setFields({ ...fields, message: e.target.value })
+									setFields({
+										...fields,
+										message: e.target.value,
+									})
 								}
 								onBlur={() =>
-									setTouched({ ...touched, message: true })
+									setTouched({
+										...touched,
+										message: true,
+									})
 								}
 								className={`w-full px-3 py-3 border rounded-lg text-sm bg-background outline-none resize-y transition-colors
 									${visibleErrors.message ? "border-danger" : "border-border focus:border-primary"}`}
@@ -200,7 +216,6 @@ export default function ContactSection() {
 						className="absolute inset-0 w-full h-full object-cover"
 					/>
 				</div>
-
 			</div>
 		</section>
 	);

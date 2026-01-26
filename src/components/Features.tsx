@@ -5,32 +5,38 @@ export default function Features() {
 		{
 			icon: Zap,
 			title: "Ultra-light Performance",
-			description: "Engineered for speed with breathable, lightweight materials.",
+			description:
+				"Engineered for speed with breathable, lightweight materials.",
 		},
 		{
 			icon: Footprints,
 			title: "All-day Comfort Fit",
-			description: "Ergonomic cushioning designed for long wear without fatigue.",
+			description:
+				"Ergonomic cushioning designed for long wear without fatigue.",
 		},
 		{
 			icon: ShieldCheck,
 			title: "Premium Build Quality",
-			description: "Durable materials tested for everyday and athletic use.",
+			description:
+				"Durable materials tested for everyday and athletic use.",
 		},
 		{
 			icon: Truck,
 			title: "Fast & Free Delivery",
-			description: "Quick doorstep delivery with easy returns and exchanges.",
+			description:
+				"Quick doorstep delivery with easy returns and exchanges.",
 		},
 	];
 
 	return (
 		<>
 			<div className="text-center">
-				<p className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium
+				<p
+					className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium
 					bg-surface
 					border-border
-					text-primary-dark">
+					text-primary-dark"
+				>
 					Why Choose Us
 				</p>
 
@@ -39,7 +45,8 @@ export default function Features() {
 				</h2>
 
 				<p className="mt-2 max-w-xl mx-auto text-text-muted">
-					Performance footwear designed for comfort, durability, and style.
+					Performance footwear designed for comfort, durability,
+					and style.
 				</p>
 			</div>
 
@@ -77,4 +84,4 @@ export default function Features() {
 			</div>
 		</>
 	);
-};
+}

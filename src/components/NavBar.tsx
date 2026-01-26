@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTheme } from "../context/ThemeContext";
-import { NavLink } from "react-router";
+import { NavLink, Link } from "react-router";
 import ThemeToggle from "./ThemeToggle";
 import logoLight from "../assets/logo-light.png";
 import logoDark from "../assets/logo-dark.png";
@@ -22,13 +22,13 @@ export default function Navbar() {
 
 	return (
 		<header className="flex items-center justify-between px-6 mt-3 py-3 md:py-4 shadow max-w-5xl rounded-full mx-auto w-full bg-surface text-text">
-			<a href="https://prebuiltui.com">
+			<Link to="/">
 				<img
 					src={theme === "dark" ? logoDark : logoLight}
 					className="h-8 md:h-10"
 					alt="ShopNext Logo"
 				/>
-			</a>
+			</Link>
 			<nav
 				id="menu"
 				className={`max-md:fixed max-md:top-0 max-md:left-0 max-md:overflow-hidden items-center justify-center max-md:h-full transition-[width] bg-surface/50 backdrop-blur flex-col md:flex-row flex gap-8 text-text text-sm font-normal z-50 ${
@@ -54,7 +54,7 @@ export default function Navbar() {
 				</button>
 				{links.map((item, index) => (
 					<NavLink
-                        key={index}
+						key={index}
 						to={item.href}
 						className={({ isActive }) =>
 							isActive

@@ -17,21 +17,21 @@ export default function Information() {
 				<div className="w-10 h-0.75 rounded-full bg-linear-to-r from-primary to-primary-dark"></div>
 
 				<p className="mt-8">
-					ShopNext is a modern e-commerce brand built around the idea
-					that great footwear should combine comfort, durability,
-					and everyday style.
+					ShopNext is a modern e-commerce brand built around the
+					idea that great footwear should combine comfort,
+					durability, and everyday style.
 				</p>
 
 				<p className="mt-4">
-					We design and curate collections that fit seamlessly into
-					daily life—whether you're commuting, traveling, working,
-					or spending long hours on your feet.
+					We design and curate collections that fit seamlessly
+					into daily life—whether you're commuting, traveling,
+					working, or spending long hours on your feet.
 				</p>
 
 				<p className="mt-4">
-					Our product range includes lightweight sneakers,
-					casual everyday shoes, and lifestyle footwear crafted
-					using breathable fabrics, responsive cushioning, and
+					Our product range includes lightweight sneakers, casual
+					everyday shoes, and lifestyle footwear crafted using
+					breathable fabrics, responsive cushioning, and
 					long-lasting outsoles.
 				</p>
 
@@ -51,7 +51,8 @@ export default function Information() {
 				<p className="mt-4">
 					Our platform is designed to make shopping simple and
 					hassle-free, with fast shipping, easy returns, and
-					responsive customer support available whenever you need it.
+					responsive customer support available whenever you need
+					it.
 				</p>
 
 				<p className="mt-4">

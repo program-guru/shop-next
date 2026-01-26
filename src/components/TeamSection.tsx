@@ -9,20 +9,17 @@ export default function TeamSection() {
 		{
 			name: "Aaditya Mall",
 			role: "Product Design",
-			image:
-				"/Team/aaditya_profile.jpeg",
+			image: "/Team/aaditya_profile.jpeg",
 		},
 		{
 			name: "Shivam Kulkarni",
 			role: "Engineering",
-			image:
-				"/Team/shivam_profile.jpg",
+			image: "/Team/shivam_profile.jpg",
 		},
 		{
 			name: "Mansi Chudasama",
 			role: "Marketing & Growth",
-			image:
-				"/Team/mansi_profile.png",
+			image: "/Team/mansi_profile.png",
 		},
 	];
 
@@ -54,7 +51,8 @@ export default function TeamSection() {
 										transition-transform duration-300
 										hover:scale-105"
 								/>
-								<div className="absolute inset-x-0 bottom-0 h-32
+								<div
+									className="absolute inset-x-0 bottom-0 h-32
 									bg-linear-to-t from-black/70 to-transparent"
 								/>
 							</div>
