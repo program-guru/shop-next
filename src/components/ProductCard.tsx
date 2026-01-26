@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import type { Product } from "../types/Product";
+import { useAppDispatch } from "../store/hooks";
+import { addToCart } from "../store/features/cart/cartSlice";
+import { addNotification } from "../store/features/notification/notificationSlice";
 
 interface Props {
 	product: Product;
@@ -8,11 +11,26 @@ interface Props {
 
 export default function ProductCard({ product }: Props) {
 	const navigate = useNavigate();
+	const dispatch = useAppDispatch();
 	const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
 	function handleSizeSelect(size: string) {
 		setSelectedSize((prev) => (prev === size ? null : size));
 	}
+
+	function handleAddToCart() {
+		if (!selectedSize) return;
+
+		dispatch(addToCart({ product, size: selectedSize }));
+
+		dispatch(
+			addNotification({
+				id: Date.now().toString(),
+				message: `${product.name} added to cart!`,
+				type: "success",
+			}),
+		);
+	};
 
 	return (
 		<div
@@ -92,7 +110,7 @@ export default function ProductCard({ product }: Props) {
 					disabled={!selectedSize}
 					onClick={(e) => {
 						e.stopPropagation();
-						console.log("Add to cart clicked");
+						handleAddToCart();
 					}}
 					className="
             mt-6 w-full py-2.5 rounded-lg

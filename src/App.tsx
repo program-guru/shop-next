@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 import Layout from "./pages/Layout";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
@@ -7,8 +9,7 @@ import ProductDetails from "./pages/ProductDetails";
 import NotFound from "./pages/NotFound";
 import ThemeProvider from "./context/ThemeProvider";
 import Products from "./pages/Products";
-import { Provider } from "react-redux";
-import { store } from "./store/store";
+import CartPage from "./pages/Cart";
 
 export default function App() {
 	return (
@@ -31,6 +32,7 @@ export default function App() {
 								path="/contact"
 								element={<ContactUs />}
 							/>
+							<Route path="/cart" element={<CartPage />} />
 							<Route path="*" element={<NotFound />} />
 						</Route>
 					</Routes>

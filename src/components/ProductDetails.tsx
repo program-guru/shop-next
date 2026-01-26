@@ -1,19 +1,39 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate, Link } from "react-router";
+import { useAppDispatch } from "../store/hooks";
+import { addToCart } from "../store/features/cart/cartSlice";
 import type { Product } from "../types/Product";
+import { addNotification } from "../store/features/notification/notificationSlice";
 
 interface Props {
 	product: Product;
 }
 
 export default function ProductDetails({ product }: Props) {
+	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
 
 	const [activeImage, setActiveImage] = useState(product.mainImage);
 	const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
 	const sizes = product.stock ? Object.keys(product.stock) : [];
+
+	function handleAddToCart() {
+    if (!selectedSize) return;
+
+    // Add to Cart
+    dispatch(addToCart({ product, size: selectedSize }));
+
+    // Show Success Toast
+    dispatch(addNotification({
+      id: Date.now().toString(),
+      message: `Added ${product.name} (Size ${selectedSize}) to cart`,
+      type: "success"
+    }));
+
+    setSelectedSize(null);
+  };
 
 	return (
 		<div className="max-w-6xl mx-auto px-6 py-8 min-h-[calc(100vh-4rem)]">
@@ -42,7 +62,7 @@ export default function ProductDetails({ product }: Props) {
 			</button>
 
 			<div className="flex flex-col lg:flex-row gap-12">
-				{/* ================= IMAGE GALLERY ================= */}
+				{/* Image Gallery */}
 				<div className="flex gap-3 items-start">
 					{/* Thumbnails */}
 					<div className="flex flex-col gap-2 shrink-0">
@@ -80,7 +100,7 @@ export default function ProductDetails({ product }: Props) {
 					</div>
 				</div>
 
-				{/* ================= PRODUCT INFO ================= */}
+				{/* Product Info */}
 				<div className="flex-1 text-left flex flex-col justify-start">
 					<h1 className="text-3xl font-heading font-semibold">
 						{product.name}
@@ -167,6 +187,10 @@ export default function ProductDetails({ product }: Props) {
 						<button
 							disabled={sizes.length > 0 && !selectedSize}
 							className="flex-1 py-3 rounded-lg border bg-surface hover:bg-surface-hover disabled:opacity-50"
+							onClick={(event) => {
+								event.stopPropagation();
+								handleAddToCart();
+							}}
 						>
 							Add to cart
 						</button>
