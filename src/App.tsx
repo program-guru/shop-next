@@ -12,32 +12,23 @@ import Products from "./pages/Products";
 import CartPage from "./pages/Cart";
 
 export default function App() {
-	return (
-		<Provider store={store}>
-			<ThemeProvider>
-				<BrowserRouter>
-					<Routes>
-						<Route element={<Layout />}>
-							<Route path="/" element={<Home />} />
-							<Route
-								path="/products"
-								element={<Products />}
-							/>
-							<Route
-								path="/products/:id"
-								element={<ProductDetails />}
-							/>
-							<Route path="/about" element={<AboutUs />} />
-							<Route
-								path="/contact"
-								element={<ContactUs />}
-							/>
-							<Route path="/cart" element={<CartPage />} />
-							<Route path="*" element={<NotFound />} />
-						</Route>
-					</Routes>
-				</BrowserRouter>
-			</ThemeProvider>
-		</Provider>
-	);
+  return (
+    <Provider store={store}>
+      <ThemeProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:id" element={<ProductDetails />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/contact" element={<ContactUs />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+    </Provider>
+  );
 }

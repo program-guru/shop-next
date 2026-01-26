@@ -10,35 +10,35 @@ import ProductDetailsView from "../components/ProductDetails";
 import NotFound from "./NotFound";
 
 export default function ProductDetailsPage() {
-	const { id } = useParams();
-	const dispatch = useAppDispatch();
+  const { id } = useParams();
+  const dispatch = useAppDispatch();
 
-	// Get from redux store
-	const status = useAppSelector(selectProductStatus);
-	const products = useAppSelector((state) => state.products.items);
+  // Get from redux store
+  const status = useAppSelector(selectProductStatus);
+  const products = useAppSelector((state) => state.products.items);
 
-	// Find the specific product derived from the URL ID
-	const product = products.find((p) => p.id === Number(id));
+  // Find the specific product derived from the URL ID
+  const product = products.find((p) => p.id === Number(id));
 
-	// Load data if not already present
-	useEffect(() => {
-		if (status === "idle") {
-			dispatch(fetchProducts());
-		}
-	}, [status, dispatch]);
+  // Load data if not already present
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchProducts());
+    }
+  }, [status, dispatch]);
 
-	// LOADING STATE
-	if (status === "loading" || status === "idle") {
-		return (
-			<div className="min-h-[60vh] flex items-center justify-center">
-				<Loader2 className="w-8 h-8 animate-spin text-primary" />
-			</div>
-		);
-	}
+  // LOADING STATE
+  if (status === "loading" || status === "idle") {
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+      </div>
+    );
+  }
 
-	// Handle Missing Product
-	if (!product) return <NotFound />;
+  // Handle Missing Product
+  if (!product) return <NotFound />;
 
-	// Presentation Component
-	return <ProductDetailsView product={product} />;
+  // Presentation Component
+  return <ProductDetailsView product={product} />;
 }

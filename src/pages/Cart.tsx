@@ -1,18 +1,18 @@
 import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { 
-  selectCartContents, 
-  selectCartTotalItems, 
-  selectCartTotalPrice 
+import {
+  selectCartContents,
+  selectCartTotalItems,
+  selectCartTotalPrice,
 } from "../store/features/cart/cartSelectors";
-import { 
-  removeFromCart, 
-  updateQuantity 
+import {
+  removeFromCart,
+  updateQuantity,
 } from "../store/features/cart/cartSlice";
-import CartView from "../components/Cart"; 
+import CartView from "../components/Cart";
 
 export default function CartPage() {
   const dispatch = useAppDispatch();
-  
+
   // Select Data from Store
   const items = useAppSelector(selectCartContents);
   const totalPrice = useAppSelector(selectCartTotalPrice);
@@ -29,7 +29,7 @@ export default function CartPage() {
 
   // Render View
   return (
-    <CartView 
+    <CartView
       items={items}
       totalPrice={totalPrice}
       totalItems={totalItems}

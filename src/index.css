@@ -3,52 +3,52 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-	/* ---------- Fonts ---------- */
-	--font-body: "Inter", system-ui, sans-serif;
-	--font-heading: "Merriweather", serif;
+  /* ---------- Fonts ---------- */
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-heading: "Merriweather", serif;
 
-	/* ---------- Brand & UI Colors (Light) ---------- */
-	--color-primary: oklch(0.58 0.16 250);
-	--color-primary-dark: oklch(0.3628 0.1097 252.36);
+  /* ---------- Brand & UI Colors (Light) ---------- */
+  --color-primary: oklch(0.58 0.16 250);
+  --color-primary-dark: oklch(0.3628 0.1097 252.36);
 
-	/* Surfaces */
-	--color-background: oklch(0.965 0.015 85);
-	--color-surface: oklch(0.99 0.01 85);
-	--color-surface-hover: oklch(0.95 0.01 85);
+  /* Surfaces */
+  --color-background: oklch(0.965 0.015 85);
+  --color-surface: oklch(0.99 0.01 85);
+  --color-surface-hover: oklch(0.95 0.01 85);
 
-	/* Text */
-	--color-text: oklch(0.23 0.01 260);
-	--color-text-muted: oklch(0.55 0.01 260);
-	--color-text-inverse: oklch(1 0 0);
+  /* Text */
+  --color-text: oklch(0.23 0.01 260);
+  --color-text-muted: oklch(0.55 0.01 260);
+  --color-text-inverse: oklch(1 0 0);
 
-	/* Borders */
-	--color-border: oklch(0.88 0.005 260);
+  /* Borders */
+  --color-border: oklch(0.88 0.005 260);
 
-	/* ---------- Status Colors ---------- */
-	--color-success: oklch(0.65 0.16 145);
-	--color-danger: oklch(0.62 0.19 25);
-	--color-warning: oklch(0.78 0.17 85);
+  /* ---------- Status Colors ---------- */
+  --color-success: oklch(0.65 0.16 145);
+  --color-danger: oklch(0.62 0.19 25);
+  --color-warning: oklch(0.78 0.17 85);
 }
 
 /* ---------- Dark Mode ---------- */
 .dark {
-	--color-background: oklch(0.16 0.02 260);
-	--color-surface: oklch(0.21 0.02 260);
-	--color-surface-hover: oklch(0.27 0.02 260);
+  --color-background: oklch(0.16 0.02 260);
+  --color-surface: oklch(0.21 0.02 260);
+  --color-surface-hover: oklch(0.27 0.02 260);
 
-	--color-text: oklch(0.92 0.01 260);
-	--color-text-muted: oklch(0.62 0.01 260);
-	--color-text-inverse: oklch(1 0 0);
+  --color-text: oklch(0.92 0.01 260);
+  --color-text-muted: oklch(0.62 0.01 260);
+  --color-text-inverse: oklch(1 0 0);
 
-	--color-border: oklch(0.32 0.015 260);
+  --color-border: oklch(0.32 0.015 260);
 
-	--color-primary: oklch(0.3628 0.1097 252.36);
-	--color-primary-dark: oklch(0.58 0.16 250);
+  --color-primary: oklch(0.3628 0.1097 252.36);
+  --color-primary-dark: oklch(0.58 0.16 250);
 }
 
 /* ---------- Base Styles ---------- */
 body {
-	font-family: var(--font-body);
-	background: var(--color-background);
-	color: var(--color-text);
+  font-family: var(--font-body);
+  background: var(--color-background);
+  color: var(--color-text);
 }
