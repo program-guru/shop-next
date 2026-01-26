@@ -7,6 +7,7 @@ import ThemeProvider from "./context/ThemeProvider";
 import Products from "./pages/Products";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
+import ProductDetails from "./pages/ProductDetails";
 
 export default function App() {
 	return (
@@ -19,6 +20,10 @@ export default function App() {
 							<Route
 								path="/products"
 								element={<Products />}
+							/>
+							<Route
+								path="/products/:id"
+								element={<ProductDetails />}
 							/>
 							<Route path="/about" element={<AboutUs />} />
 							<Route
