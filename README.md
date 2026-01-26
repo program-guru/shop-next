@@ -1,73 +1,116 @@
-# React + TypeScript + Vite
+# ShopNext - E-Commerce Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ShopNext is a modern, production-ready e-commerce frontend built with **React**, **TypeScript**, and **Vite**. It features a scalable architecture using **Redux Toolkit** for complex state management, **Context API** for theming, and a fully responsive design.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Core:** React 19, TypeScript, Vite
+* **State Management:** Redux Toolkit (Cart, Products, Notifications), React Context (Theme)
+* **Routing:** React Router v7
+* **Styling:** Tailwind CSS 
+* **Icons:** Lucide React
+* **Code Quality:** ESLint, Prettier
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Steps to Run Locally
 
-## Expanding the ESLint configuration
+Follow these steps to get the project running on your local machine:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1.  **Prerequisites:** Ensure you have Node.js (v18+) and npm installed.
+2.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/program-guru/shop-next.git
+    cd shopnext
+    ```
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+4.  **Start the development server:**
+    ```bash
+    npm run dev
+    ```
+5.  **Build for production:**
+    ```bash
+    npm run build
+    ```
+6.  **Lint & Format:**
+    ```bash
+    npm run lint
+    npm run format
+    ```
 
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📂 Folder Structure Explanation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+The project follows a **Feature-Based** and **Domain-Driven** directory structure to ensure maintainability and scalability.
+
+```text
+src/
+├── assets/          # Static assets imported within components (Logos)
+├── components/      # Reusable UI components (Presentational & Smart components)
+│   ├── Cart.tsx     # Cart UI logic
+│   ├── NavBar.tsx   # Responsive Navigation
+│   └── ...          # Other UI blocks (Carousel, Forms, Cards)
+├── context/         # React Context definitions (ThemeContext)
+├── data/            # Local JSON data mocking API responses (products.json)
+├── pages/           # Route-level components (Page Controllers)
+│   ├── Home.tsx
+│   ├── Products.tsx
+│   └── ...
+├── store/           # Redux Toolkit configuration
+│   ├── features/    # Redux Slices grouped by domain (Cart, Filter, Products)
+│   ├── hooks.ts     # Typed useAppDispatch and useAppSelector
+│   └── store.ts     # Main store configuration
+├── types/           # TypeScript interfaces (Product, Cart, Theme, etc.)
+└── main.tsx         # Application Entry Point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+## 📊 Component Heirarchy Diagram
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```
+main.tsx
+  │
+  ▼
+App.tsx (Router Provider)
+  │
+  ▼
+Layout.tsx ──────────────────────────────────────────┐
+  │                                                  │
+  ├── NotificationContainer.tsx                      │
+  ├── Navbar.tsx                                     │
+  ├── Footer.tsx                                     │
+  │                                                  │
+  ▼                                                  │
+[Outlet] (Dynamic Page Rendering)                    │
+  │                                                  │
+  ├─ Home.tsx                                        │
+  │    ├── Carousel.tsx                              │
+  │    ├── Features.tsx                              │
+  │    └── ProductFAQ.tsx                            │
+  │                                                  │
+  ├─ Products.tsx                                    │
+  │    ├── FilterSideBar.tsx                         │
+  │    └── ProductCard.tsx (Iterated)                │
+  │                                                  │
+  ├─ ProductDetails.tsx (Page Controller)            │                    
+  │    └── components/ProductDetails.tsx (View)      │
+  │                                                  │
+  ├─ Cart.tsx (Page Controller)                      │
+  │    └── components/Cart.tsx (View)                │
+  │                                                  │
+  ├─ AboutUs.tsx                                     │
+  │    ├── Information.tsx                           │
+  │    └── TeamSection.tsx                           │
+  │                                                  │
+  ├─ ContactUs.tsx                                   │
+  │    └── ContactForm.tsx                           │
+  │                                                  │
+  └─ NotFound.tsx (404 Page)                         │                     
+                                                     │
+─────────────────────────────────────────────────────┘
 ```
