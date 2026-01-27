@@ -17,7 +17,8 @@ export const selectFilteredProducts = createSelector(
         const query = filters.searchQuery.toLowerCase();
         const matchName = product.name.toLowerCase().includes(query);
         const matchDesc = product.description.toLowerCase().includes(query);
-        if (!matchName && !matchDesc) return false;
+        const matchBrand = query.toLocaleLowerCase().includes(product.brand.toLowerCase());
+        if (!matchName && !matchDesc && !matchBrand) return false;
       }
 
       // 2. Brands
