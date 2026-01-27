@@ -24,7 +24,7 @@ export default function ProductDetails({ product }: Props) {
     if (sizes.length > 0 && !selectedSize) {
       setSizeError(true);
       setTimeout(() => setSizeError(false), 3000);
-      return;
+      return false;
     }
 
     // Add to Cart
@@ -41,15 +41,14 @@ export default function ProductDetails({ product }: Props) {
 
     setSelectedSize(null);
     setSizeError(false);
+
+    return true;
   }
 
   function handleBuyNow() {
-    if (sizes.length > 0 && !selectedSize) {
-      setSizeError(true);
-      setTimeout(() => setSizeError(false), 3000);
-      return;
+    if(handleAddToCart()) {
+      navigate("/cart");
     }
-    // Add buy now logic here
   }
 
   return (
@@ -214,7 +213,10 @@ export default function ProductDetails({ product }: Props) {
                 </button>
 
                 <button
-                  onClick={handleBuyNow}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    handleBuyNow();
+                  }}
                   className="flex-1 py-3 sm:py-3 rounded-lg bg-primary text-text-inverse hover:bg-primary-dark text-sm sm:text-base font-medium"
                 >
                   Buy now
