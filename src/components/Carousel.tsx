@@ -88,7 +88,7 @@ export default function Carousel({
           className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-semibold transition-transform hover:scale-105 active:scale-95"
           onClick={() => navigate(`/products/${products[currentIndex].id}`)}
         >
-          Shop Now - ${products[currentIndex].price}
+          Shop Now - ₹{products[currentIndex].price}
         </button>
       </div>
 
