@@ -54,7 +54,9 @@ export default function Sidebar() {
 
   // Sync local state if Redux changes
   useEffect(() => {
-    setLocalSearch(searchQuery);
+    if (searchQuery !== localSearch) {
+      setLocalSearch(searchQuery);
+    }
   }, [searchQuery]);
 
   const MIN_PRICE_LIMIT = 0;
@@ -63,12 +65,7 @@ export default function Sidebar() {
   useEffect(() => {
     // Debounce price range updates by 300ms
     const handler = setTimeout(() => {
-      if (
-        localPrice.min !== priceRange.min ||
-        localPrice.max !== priceRange.max
-      ) {
-        dispatch(setPriceRange(localPrice));
-      }
+      dispatch(setPriceRange(localPrice));
     }, 300);
 
     return () => clearTimeout(handler);
@@ -76,7 +73,12 @@ export default function Sidebar() {
 
   // Sync local state if Redux changes
   useEffect(() => {
-    setLocalPrice(priceRange);
+    if (
+      priceRange.min !== localPrice.min ||
+      priceRange.max !== localPrice.max
+    ) {
+      setLocalPrice(priceRange);
+    }
   }, [priceRange]);
 
   // Visual Helper: Sort selected chips to the top
