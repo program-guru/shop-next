@@ -39,7 +39,7 @@ export default function ProductCard({ product }: Props) {
         flex flex-col md:flex-row
         bg-surface border border-border rounded-2xl overflow-hidden
         max-w-lg
-        md:h-72
+        md:min-h-72
         hover:bg-surface-hover transition-colors
         cursor-pointer group relative
       "
@@ -58,6 +58,8 @@ export default function ProductCard({ product }: Props) {
 
       {/* Content */}
       <div className="p-5 flex flex-col justify-between flex-1">
+        {" "}
+        {/* Added flex-col and justify-between */}
         <div>
           <h3 className="text-lg font-heading font-semibold text-text leading-tight line-clamp-2 group-hover:text-primary transition-colors">
             {product.name}
@@ -103,7 +105,6 @@ export default function ProductCard({ product }: Props) {
               })}
           </div>
         </div>
-
         {/* CTA */}
         <button
           disabled={!selectedSize}
@@ -118,6 +119,7 @@ export default function ProductCard({ product }: Props) {
             transition-all
             hover:-translate-y-0.5
             hover:shadow-[0_10px_20px_var(--color-primary)/30]
+            cursor-pointer
             disabled:opacity-50
             disabled:pointer-events-none
           "
